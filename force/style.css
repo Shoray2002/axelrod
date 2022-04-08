@@ -1,30 +1,58 @@
-@font-face {
-  font-family: "Star Wars";
-  src: url(https://jsbin-user-assets.s3.amazonaws.com/rafaelcastrocouto/star-wars.woff);
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Inconsolata", monospace;
+  box-sizing: border-box;
 }
+
 body {
-  font-family: "Star Wars";
-  display: grid;
-  place-content: center;
-  height: 100vh;
-  background-color: #001;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='210' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23664' fill-opacity='0.1'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-position: -100px -100px;
+  background-color: #050801;
 }
-div {
-  text-align: center;
+
+p{
+  color: #fff;
+  text-align:center;
+  margin-top: 10px
 }
-h1 {
-  font-size: 7em;
-  color: gold;
-  margin: 0.2em;
-  letter-spacing: 0.1em;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 0.01em;
-  -webkit-text-stroke-color: gold;
+
+a {
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px;
+  font-size: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: 0.5s;
 }
-p {
-  font-size: 2em;
-  color: white;
-  margin: 0;
+
+.btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  flex-direction: row;  
+}
+.blue-btn{
+  color: #03e9f4;
+  border: 1.5px solid #03e9f4;
+  border-radius: 7px;  
+}
+.blue-btn:hover{
+  background-color: #03e9f4;
+  color: #050801;
+  box-shadow: 0px 0px 5px #03e9f4, 0px 0px 25px #03e9f4, 0px 0px 50px #03e9f4, 0px 0px 100px #03e9f4;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); 
+}
+.pink-btn{
+  color: #e100ff;
+  border: 1.5px solid #e100ff;
+  border-radius: 7px;  
+}
+.pink-btn:hover{
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); 
 }
