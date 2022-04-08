@@ -1,9 +1,4 @@
 "use strict";
-/* globals THREE, console */
-
-// 1. Create an array to store stars
-// 2. Create stars in random locations within a cube
-// 3. Store stars in array so we can move them within render
 
 let camera, scene, renderer;
 let planeMesh;
@@ -120,13 +115,13 @@ window.addEventListener("resize", function () {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-window.addEventListener("touchstart", function () {
-  activated = true;
-});
+// window.addEventListener("touchstart", function () {
+//   activated = true;
+// });
 
-window.addEventListener("touchend", function () {
-  activated = false;
-});
+// window.addEventListener("touchend", function () {
+//   activated = false;
+// });
 
 // var h2 = document.querySelector("h2");
 // TweenLite.fromTo(h2, 1.5, { opacity: 0 }, { opacity: 1 });
