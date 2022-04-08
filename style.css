@@ -3,6 +3,7 @@
   font-family: "Star Wars";
   src: url(https://jsbin-user-assets.s3.amazonaws.com/rafaelcastrocouto/star-wars.woff);
 }
+
 html,
 body {
   height: 100%;
@@ -267,4 +268,19 @@ a {
   animation-name: shadow-red;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  background: black
+}
+
+body::-webkit-scrollbar-thumb {
+  outline: 1px solid rgba(0, 136, 255, 0.5);
+  border-radius: 10px;
+  
 }

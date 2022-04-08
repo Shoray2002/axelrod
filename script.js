@@ -100,6 +100,10 @@ window.addEventListener("wheel", function (event) {
     activated = true;
   }
 });
+// when scroll bar is moved
+document.addEventListener("scroll", function (event) {
+  activated = true;
+});
 
 let idleTime = 0;
 let idleInterval = setInterval(function () {
@@ -107,7 +111,7 @@ let idleInterval = setInterval(function () {
   if (idleTime > 1) {
     activated = false;
   }
-}, 500);
+}, 350);
 
 window.addEventListener("resize", function () {
   camera.aspect = window.innerWidth / window.innerHeight;
@@ -115,13 +119,13 @@ window.addEventListener("resize", function () {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// window.addEventListener("touchstart", function () {
-//   activated = true;
-// });
+window.addEventListener("touchstart", function () {
+  activated = true;
+});
 
-// window.addEventListener("touchend", function () {
-//   activated = false;
-// });
+window.addEventListener("touchend", function () {
+  activated = false;
+});
 
 // var h2 = document.querySelector("h2");
 // TweenLite.fromTo(h2, 1.5, { opacity: 0 }, { opacity: 1 });
