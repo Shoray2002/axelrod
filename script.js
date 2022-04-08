@@ -8,7 +8,7 @@
 let camera, scene, renderer;
 let planeMesh;
 let stars = [];
-let colors = ["#0952BD", "#A5BFF0", "#118CD6", "#1AAEE8", "#ffffff"];
+let colors = ["#ff0000", "#A5BFF0", "#118CD6", "#0087ffcc", "#ffffff"];
 let activated = false;
 
 function init() {
@@ -92,13 +92,27 @@ function render() {
 init();
 render();
 
-window.addEventListener("mousedown", function (event) {
-  activated = true;
+// window.addEventListener("mousedown", function (event) {
+//   activated = true;
+// });
+
+// window.addEventListener("mouseup", function (event) {
+//   activated = false;
+// });
+
+window.addEventListener("wheel", function (event) {
+  if (event.deltaY < 0 || event.deltaY > 0) {
+    activated = true;
+  }
 });
 
-window.addEventListener("mouseup", function (event) {
-  activated = false;
-});
+let idleTime = 0;
+let idleInterval = setInterval(function () {
+  idleTime += 1;
+  if (idleTime > 1) {
+    activated = false;
+  }
+}, 500);
 
 window.addEventListener("resize", function () {
   camera.aspect = window.innerWidth / window.innerHeight;
