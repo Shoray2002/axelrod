@@ -8,23 +8,20 @@
 let camera, scene, renderer;
 let planeMesh;
 let stars = [];
-let colors = ["#0952BD", "#A5BFF0", "#118CD6", "#1AAEE8", "#ffffff"];
-let activated = false;
+let colors = [
+"#0952BD",
+"#A5BFF0",
+"#118CD6",
+"#1AAEE8",
+"#ffffff"];
+
 
 function init() {
   scene = new THREE.Scene();
   scene.fog = new THREE.Fog(0x000000, 0.015, 72);
 
-  camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
-  renderer = new THREE.WebGLRenderer({
-    preserveDrawingBuffer: true,
-    alpha: true,
-  });
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  renderer = new THREE.WebGLRenderer({ preserveDrawingBuffer: true, alpha: true });
   renderer.sortObjects = false;
   renderer.autoClearColor = false;
 
@@ -38,11 +35,11 @@ function init() {
   document.body.appendChild(renderer.domElement);
 
   for (let i = 0; i < 3000; i++) {
-    let geometry = new THREE.SphereBufferGeometry(0.05 * Math.random(), 10, 10);
+    let geometry = new THREE.SphereBufferGeometry(0.12 * Math.random(), 10, 10);
     let material = new THREE.MeshBasicMaterial({
       color: colors[Math.floor(Math.random() * colors.length)],
-      shading: THREE.FlatShading,
-    });
+      shading: THREE.FlatShading });
+
 
     let star = new THREE.Mesh(geometry, material);
 
@@ -55,18 +52,16 @@ function init() {
   }
 
   let planeGeometry = new THREE.PlaneGeometry(1000, 500, 1, 1);
-  let planeMaterial = new THREE.MeshBasicMaterial({
-    color: 0x000000,
-    transparent: true,
-    opacity: 1,
-  });
+  let planeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 1 });
 
   planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
 
   scene.add(planeMesh);
 }
 
+
 function render() {
+
   requestAnimationFrame(render);
   renderer.render(scene, camera);
 
@@ -81,16 +76,18 @@ function render() {
   }
 
   if (activated == true) {
-    planeMesh.material.opacity = 0.1;
+    planeMesh.material.opacity = 0.01;
   } else {
     if (planeMesh.material.opacity < 1) {
-      planeMesh.material.opacity += 0.1;
+      planeMesh.material.opacity += 0.01;
     }
   }
 }
 
 init();
 render();
+
+let activated = false;
 
 window.addEventListener("mousedown", function (event) {
   activated = true;
@@ -114,6 +111,6 @@ window.addEventListener("touchend", function () {
   activated = false;
 });
 
-// var h2 = document.querySelector("h2");
-// TweenLite.fromTo(h2, 1.5, { opacity: 0 }, { opacity: 1 });
-// TweenLite.to(h2, 1.75, { opacity: 0, delay: 3 });
+var h2 = document.querySelector('h2');
+TweenLite.fromTo(h2, 1.5, { opacity: 0 }, { opacity: 1 });
+TweenLite.to(h2, 1.75, { opacity: 0, delay: 3 });
