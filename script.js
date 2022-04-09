@@ -24,7 +24,7 @@ function init() {
   renderer.autoClearColor = false;
 
   // Scene initialization
-  camera.position.z = 55;
+  camera.position.z = 60;
 
   renderer.setClearColor("#000", 1);
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -83,6 +83,9 @@ function render() {
     }
   }
 }
+
+
+
 
 init();
 render();
