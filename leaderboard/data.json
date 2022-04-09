@@ -1,0 +1,42 @@
+[
+  {
+    "Rank": 1,
+    "PlayerName": "Linus Torvalds",
+    "Points": 86
+  },
+  {
+    "Rank": 2,
+    "PlayerName": "Bill Gates",
+    "Points": 56
+  },
+  {
+    "Rank": 3,
+    "PlayerName": "Mark Zucc",
+    "Points": 69
+  }
+  ,
+  {
+    "Rank": 4,
+    "PlayerName": "Steve Jobs",
+    "Points": 52
+  }
+  ,
+  {
+    "Rank": 5,
+    "PlayerName": "Larry Page",
+    "Points": 48
+  }
+  ,
+  {
+    "Rank": 6,
+    "PlayerName": "Steve Wozniak",
+    "Points": 46
+  }
+  ,
+  {
+    "Rank": 7,
+    "PlayerName": "Bill Gates",
+    "Points": 46
+  }
+  
+]

@@ -3,7 +3,7 @@
 let camera, scene, renderer;
 let planeMesh;
 let stars = [];
-let colors = ["#ff0000", "#A5BFF0", "#118CD6", "#0087ffcc", "#ffffff"];
+let colors = ["#ff0000", "#A5BFF0", "#118CD6", "#0087ff", "#ffffff"];
 let activated = false;
 
 function init() {
