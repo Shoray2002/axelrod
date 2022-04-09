@@ -2,7 +2,6 @@ let values = {
   placeholder: "Your code goes here.",
 };
 
-// Updates the preview window and html_values
 function updateVal() {
   console.log(codemirror.getValue());
 }
