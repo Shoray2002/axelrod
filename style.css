@@ -270,17 +270,15 @@ a {
   animation-direction: alternate;
 }
 
-
 body::-webkit-scrollbar {
   width: 0.5em;
 }
 
 body::-webkit-scrollbar-track {
-  background: black
+  background: black;
 }
 
 body::-webkit-scrollbar-thumb {
   outline: 1px solid rgba(0, 136, 255, 0.5);
   border-radius: 10px;
-  
 }

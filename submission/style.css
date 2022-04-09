@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Artifika|Lato:400,400i,700,700i|PT+Mono");
+@font-face {
+  font-family: "Star Wars";
+  src: url(https://jsbin-user-assets.s3.amazonaws.com/rafaelcastrocouto/star-wars.woff);
+}
+
+* {
+  box-sizing: border-box;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  padding: 20px;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: "Star Wars", sans-serif;
+  line-height: 40px;
+  position: absolute;
+  top: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  font-size: 7rem;
+  color: gold;
+  margin: 0.2em;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.01);
+  -webkit-text-stroke-width: 0.015em;
+  -webkit-text-stroke-color: rgb(0, 135, 255);
+  filter: drop-shadow(-8px 8px 1px rgba(255, 0, 0, 0.8));
+}
+
+#output {
+  height: calc(100% - 70px);
+  overflow: auto;
+}
+
+.CodeMirror {
+  height: calc(100% - 300px);
+  width: calc(100% - 80px);
+  border: 1px solid rgb(0, 135, 255);
+  box-shadow: -4px 4px 1px rgba(255, 0, 0, 0.8);
+}
+@media screen and (max-width: 1280px) {
+  title {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 845px) {
+  title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  title {
+    font-size: 2rem;
+  }
+}
