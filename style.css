@@ -35,7 +35,6 @@ body {
   padding-left: 2vh;
   padding-right: 2vh;
   padding-bottom: 1vh;
-
   font-family: "Star Wars";
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -60,6 +59,21 @@ body {
   -webkit-text-fill-color: rgba(255, 255, 255, 0.01);
   -webkit-text-stroke-width: 0.015em;
 }
+
+.association {
+  line-height: 40px;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  font-size: 2rem;
+  color: gold;
+  margin: 0.2em;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: rgba(201, 49, 49, 0.01);
+  -webkit-text-stroke-width: 0.015em;
+  -webkit-text-stroke-color: #ff0000;
+  filter: drop-shadow(-8px 8px 1px #0087ffcc);
+}
+
 .axelrod {
   -webkit-text-stroke-color: #ff0000;
   filter: drop-shadow(-8px 8px 1px #0087ffcc);
@@ -67,6 +81,14 @@ body {
 .duels {
   -webkit-text-stroke-color: rgb(0, 135, 255);
   filter: drop-shadow(-8px 8px 1px rgba(255, 0, 0, 0.8));
+}
+img {
+  width: 30%;
+  height: auto;
+}
+.table {
+  width: 50%;
+  height: auto;
 }
 
 p {
@@ -78,32 +100,7 @@ p {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-  .header h1 {
-    font-size: 4rem;
-  }
-  .header p {
-    font-size: 1.5em;
-  }
-  .header {
-    padding-left: 0;
-    padding-right: 0;
-  }
 
-  .header {
-    margin-bottom: 2vh;
-  }
-  .btns {
-    /* margin-top: 2vh; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-}
 .main {
   position: relative;
   padding: 40px 0 5vh;
@@ -117,10 +114,11 @@ p {
   height: 100%;
   color: #fff;
   text-align: center;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 .content h2 {
   padding-top: 40px;
+  font-size: 1rem;
 }
 
 @keyframes shadow-red {
@@ -198,4 +196,33 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   outline: 1px solid rgba(0, 136, 255, 0.5);
   border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+  .header h1 {
+    font-size: 4rem;
+  }
+  .header p {
+    font-size: 1.5em;
+  }
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header {
+    margin-bottom: 2vh;
+  }
+  .btns {
+    flex-direction: column;
+  }
+  img {
+    width: 40%;
+  }
+  .table {
+    width: 30%;
+    height: auto;
+  }
 }

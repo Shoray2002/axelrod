@@ -18,94 +18,136 @@
       <div class="header">
         <h1 class="axelrod">Axelrod</h1>
         <h1 class="duels">Duels</h1>
+        <h2 class="association">In assosiation with</h2>
+        <div class="images">
+          <img src="./images/equinox.png" alt="equinox" />
+          <img src="./images/equinox.png" alt="duels" />
+        </div>
         <div class="btns">
           <a class="blue-btn" href="/leaderboard">LeaderBoard</a>
-          <a class="pink-btn" href="/submission">Login &sol; Register</a>
+          <a class="pink-btn" href="/submission"
+            >Login <strong>&sol;</strong> Register</a
+          >
         </div>
       </div>
 
       <div class="main">
         <div class="content">
-          <p>Rules</p>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
+          <p>Goal</p>
+          <h2>
+            The goal of this contest is to write a python function that takes in
+            a string that contains the opponent's source code, and returns
+            either 'cooperate' or 'defect'. You can use this template as a
+            starting point for your code. This is a question from open source
+            game theory, where open source refers to the fact that the
+            opponent's source code is open, and game theory is the study of
+            interactions between agents, like the one you'll write. This problem
+            is derived from a classic problem in game theory - Prisoners'
+            dilemma. For a more thorough description of the problem, we
+            encourage you to read the sections below.
           </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
+          <p>The Prisoner's Dilemma</p>
+
+          <h2>
+            There is a famous example in game theory, where two prisoners are
+            arrested, and given two options - stay silent, or betray the other
+            prisoner. If both of them stay silent (i.e., cooperate with each
+            other), they get 1 year of prison time each. If either of them
+            betrays the other (i.e., defects), the defector can go free, but the
+            prisoner who stays silent gets 3 years. If both of them betray each
+            other, they get 2 years each. <br /><br />
+            Here's a table of the possible options and outcomes:
           </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
+          <div class="images">
+            <img src="./images/table.png" class="table" alt="table" />
+          </div>
+          <h2>
+            We can see that in any case except the one where both of them
+            defect, one can get a better outcome by defecting instead of
+            cooperating. So, a rational individual will always defect, which
+            means at equilibrium (a point where no-one can take an action that
+            can improve the situation for themselves), both of them will get 2
+            years each in prison.
+            <a
+              href="https://youtu.be/UkXI-zPcDIM"
+              target="_blank"
+              style="color: gold; text-decoration: underline"
+              >This</a
+            >
+            video about Prisoners' dilemma and Nash equilibrium is a good
+            introduction to this if you aren't already familiar.
           </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
+          <p>Open source game theory</p>
+          <h2>
+            Now consider the scenario where A and B are computer programs, and
+            they can read the other's source code. This is a classic example in
+            open source game theory, which covers the cases when agents can look
+            at their opponent's source code to figure out the best course of
+            action.
+            <br />
+            <br />
+            Here are a few strategies such agents can take in the original
+            problem of prisoner's dilemma:
           </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
+          <h2>
+            1. Always Cooperate
+            <br />
+            <br />
+
+            <code
+              >def cooperate_strategy(opponent_source: str) -> str: return
+              'cooperate'</code
+            >
+            <br />
+            <br />
+            This agent will always cooperate in all cases, which gives us a
+            chance at achieving the optimal outcome.
           </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
+          <h2>
+            2. Always defect:
+            <br />
+            <br />
+
+            <code
+              >def defect_strategy(opponent_source: str) -> str: return
+              'defect'</code
+            >
+            <br />
+            <br />
+            This agent will always defect in all cases, which represents the
+            optimal strategy when you cannot see your opponent's source code.
           </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
+          <h2>
+            3. Choose a strategy randomly:
+            <br />
+            <br />
+
+            <code
+              >from random import random def random_strategy(opponent_source:
+              str) -> str: if random() > 0.5: # or, any some threshold in place
+              of 0.5 return 'cooperate' else: return 'defect'</code
+            >
+            <br />
+            <br />
+            This agent will defect or cooperate with equal probability.
           </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
-          </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
-          </h2>
-          <h2 id="rules">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem
-            delectus autem non facere, eius soluta vitae ea qui sint.
-            Accusantium totam optio nam pariatur illum cum, magnam deleniti
-            libero? Doloribus ea possimus veniam nihil explicabo cum ex harum
-            quam, nisi quod consequatur laudantium odio non atque ullam, autem
-            ab quibusdam?
+          <h2>
+            4. Cooperate if you are sure that the opponent is going to
+            cooperate, defect otherwise: This is a very interesting case. You
+            try to prove that the opponent is going to cooperate, and cooperate
+            only if you can prove that the opponent will cooperate. The
+            pseudocode here could look like:
+            <br />
+            <br />
+            <code
+              >def proof_strategy(opponent_source: str) -> str: #
+              proof_will_cooperate isn't specified here, as this is one solution
+              to this problem if proof_will_cooperate(opponent_source,
+              self_source): return 'cooperate' else: return 'defect'</code
+            >
+            <br />
+            <br />
+            This agent will defect or cooperate with equal probability.
           </h2>
         </div>
       </div>
