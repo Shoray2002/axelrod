@@ -45,6 +45,16 @@ function init() {
     star.position.y = Math.random() * 100 - 50;
     star.position.z = Math.random() * 50 - 25;
 
+    while (
+      !(
+        (star.position.x < -5 || star.position.x > 5) &&
+        (star.position.y < -5 || star.position.y > 5)
+      )
+    ) {
+      star.position.x = Math.random() * 100 - 50;
+      star.position.y = Math.random() * 100 - 50;
+      star.position.z = Math.random() * 50 - 25;
+    }
     scene.add(star);
     stars.push(star);
   }
@@ -69,23 +79,20 @@ function render() {
     stars[i].position.z += 0.09;
 
     if (stars[i].position.z >= 60) {
-      stars[i].position.x = Math.random() * 100 - 50;
-      stars[i].position.y = Math.random() * 100 - 50;
-      stars[i].position.z = 5;
+      stars[i].position.z = Math.random() * 10;
     }
   }
 
   if (activated == true) {
-    planeMesh.material.opacity = 0.1;
+    if (planeMesh.material.opacity > 0.1) {
+      planeMesh.material.opacity -= 0.05;
+    }
   } else {
     if (planeMesh.material.opacity < 1) {
-      planeMesh.material.opacity += 0.1;
+      planeMesh.material.opacity += 0.01;
     }
   }
 }
-
-
-
 
 init();
 render();
@@ -133,3 +140,5 @@ window.addEventListener("touchend", function () {
 // var h2 = document.querySelector("h2");
 // TweenLite.fromTo(h2, 1.5, { opacity: 0 }, { opacity: 1 });
 // TweenLite.to(h2, 1.75, { opacity: 0, delay: 3 });
+
+

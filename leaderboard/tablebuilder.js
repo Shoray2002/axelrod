@@ -1,5 +1,10 @@
-import data from "./data.json" assert { type: "json" };
-console.log(data);
+let data = [
+  {
+    "Rank": 1337,
+    "PlayerName": "Check back after contest starts!",
+    "Points": 1337
+  }
+]
 let x = data
   .map(function (item) {
     return `
