@@ -36,7 +36,10 @@ let codemirror = CodeMirror.fromTextArea(
 setCode("placeholder");
 
 submit.addEventListener("click", function () {
-  console.log(codemirror.getValue());
+  const spinner = document.getElementsByClassName("spinner")[0];
+  spinner.style.display = "block";
+  submit.style.opacity = "0.5";
+  submit.style.pointerEvents = "none";
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "axelrodduels.iiitl.ac.in/submit", true);
   xhr.setRequestHeader("Content-Type", "application/json");
@@ -49,6 +52,9 @@ submit.addEventListener("click", function () {
         alert(values.failure);
       }
     }
+    spinner.style.display = "none";
+    submit.style.opacity = "1";
+    submit.style.pointerEvents = "auto";
   };
   xhr.send(JSON.stringify({ code: codemirror.getValue() }));
 });
