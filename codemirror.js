@@ -14,13 +14,13 @@ let values = {
     "\n" +
     "driver()",
   empty: "",
+  success: "Your Submission was Successful!",
+  failure: "Your Submission was Unsuccessful! Please Try Again!",
 };
 let submit = document.getElementById("submit");
-
 function setCode(x) {
   codemirror.setValue(values[x]);
 }
-
 let codemirror = CodeMirror.fromTextArea(
   document.getElementById("code-block"),
   {
@@ -37,5 +37,18 @@ setCode("placeholder");
 
 submit.addEventListener("click", function () {
   console.log(codemirror.getValue());
-  setCode("empty");
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "axelrodduels.iiitl.ac.in/submit", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      let response = JSON.parse(xhr.responseText);
+      if (response.status === "success") {
+        alert(values.success);
+      } else {
+        alert(values.failure);
+      }
+    }
+  };
+  xhr.send(JSON.stringify({ code: codemirror.getValue() }));
 });

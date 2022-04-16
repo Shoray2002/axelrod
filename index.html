@@ -1,110 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Axelrod Duels</title>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-    /> -->
-
-    <link rel="stylesheet" href="./style.css"/>
-    <link rel="stylesheet" href="./github-light.css"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./github-light.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-</head>
-<body>
-<div class="container">
-    <div class="header">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
         <h1 class="axelrod">Axelrod</h1>
         <h1 class="duels">Duels</h1>
         <div class="btns">
-            <a class="blue-btn" href="/leaderboard/index.html">LeaderBoard</a>
-            <a class="pink-btn" href="/login">Login / Register</a>
+          <a class="blue-btn" href="/leaderboard/index.html">LeaderBoard</a>
+          <a class="pink-btn" href="/login">Login / Register</a>
         </div>
-    </div>
+      </div>
 
-    <div class="main">
+      <div class="main">
         <div class="content">
-            <article class="markdown-body entry-content container-lg" itemprop="text">
-                <p dir="auto">The goal of this contest is to write a python function that takes in a string that
-                    contains the opponent's source code, and returns either 'cooperate' or 'defect'. You can use <a
-                            href="https://gist.github.com/pranavgade20/dbd6180dbfbc657437ccf5d3d9dd25a1">this
-                        template</a> as a starting point for your code. This is a question from open source game theory,
-                    where open source refers to the fact that the opponent's source code is open, and game theory is the
-                    study of interactions between agents, like the one you'll write. This problem is derived from a
-                    classic problem in game theory - Prisoners' dilemma. For a more thorough description of the problem,
-                    we encourage you to read the sections below.</p>
-                <h2 dir="auto">The prisoner's dilemma</h2>
-                <p dir="auto">There is a famous example in game theory, where two prisoners are arrested, and given two
-                    options - stay silent, or betray the other prisoner. If both of them stay silent (i.e., cooperate
-                    with each other), they get 1 year of prison time each. If either of them betrays the other (i.e.,
-                    defects), the defector can go free, but the prisoner who stays silent gets 3 years. If both of them
-                    betray each other, they get 2 years each.</p>
-                <p dir="auto">Here's a table of the possible options and outcomes:</p>
-                <div style="justify-content: center; align-content: center; display: flex">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th></th>
-                            <th><strong>A cooperates</strong></th>
-                            <th><strong>A defects</strong></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><strong>B cooperates</strong></td>
-                            <td>1 year prison time each</td>
-                            <td>0 years for A, 3 for B</td>
-                        </tr>
-                        <tr>
-                            <td><strong>B defects</strong></td>
-                            <td>3 years for A, 0 for B</td>
-                            <td>2 years each</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p dir="auto">We can see that in any case except the one where both of them defect, one can get a better
-                    outcome by defecting instead of cooperating. So, a rational individual will always defect, which
-                    means at equilibrium (a point where no-one can take an action that can improve the situation for
-                    themselves), both of them will get 2 years each in prison. <a href="https://youtu.be/UkXI-zPcDIM"
-                                                                                  rel="nofollow">This video</a> about
-                    Prisoners' dilemma and Nash equilibrium is a good introduction to this if you aren't already
-                    familiar.</p>
-                <h2 dir="auto">Open source game theory</h2>
-                <p dir="auto">Now consider the scenario where A and B are computer programs, and they can read the
-                    other's source code. This is a classic example in open source game theory, which covers the cases
-                    when agents can look at their opponent's source code to figure out the best course of action.</p>
-                <p dir="auto">Here are a few strategies such agents can take in the original problem of prisoner's
-                    dilemma:</p>
-                <ol dir="auto">
-                    <li>
-                        <p dir="auto">Always cooperate:</p>
-                        <div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span
+          <article
+            class="markdown-body entry-content container-lg"
+            itemprop="text"
+          >
+            <p dir="auto">
+              The goal of this contest is to write a python function that takes
+              in a string that contains the opponent's source code, and returns
+              either 'cooperate' or 'defect'. You can use
+              <a
+                href="https://gist.github.com/pranavgade20/dbd6180dbfbc657437ccf5d3d9dd25a1"
+                >this template</a
+              >
+              as a starting point for your code. This is a question from open
+              source game theory, where open source refers to the fact that the
+              opponent's source code is open, and game theory is the study of
+              interactions between agents, like the one you'll write. This
+              problem is derived from a classic problem in game theory -
+              Prisoners' dilemma. For a more thorough description of the
+              problem, we encourage you to read the sections below.
+            </p>
+            <h2 dir="auto">The prisoner's dilemma</h2>
+            <p dir="auto">
+              There is a famous example in game theory, where two prisoners are
+              arrested, and given two options - stay silent, or betray the other
+              prisoner. If both of them stay silent (i.e., cooperate with each
+              other), they get 1 year of prison time each. If either of them
+              betrays the other (i.e., defects), the defector can go free, but
+              the prisoner who stays silent gets 3 years. If both of them betray
+              each other, they get 2 years each.
+            </p>
+            <p dir="auto">
+              Here's a table of the possible options and outcomes:
+            </p>
+            <div
+              style="
+                justify-content: center;
+                align-content: center;
+                display: flex;
+              "
+            >
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th><strong>A cooperates</strong></th>
+                    <th><strong>A defects</strong></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>B cooperates</strong></td>
+                    <td>1 year prison time each</td>
+                    <td>0 years for A, 3 for B</td>
+                  </tr>
+                  <tr>
+                    <td><strong>B defects</strong></td>
+                    <td>3 years for A, 0 for B</td>
+                    <td>2 years each</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p dir="auto">
+              We can see that in any case except the one where both of them
+              defect, one can get a better outcome by defecting instead of
+              cooperating. So, a rational individual will always defect, which
+              means at equilibrium (a point where no-one can take an action that
+              can improve the situation for themselves), both of them will get 2
+              years each in prison.
+              <a href="https://youtu.be/UkXI-zPcDIM" rel="nofollow"
+                >This video</a
+              >
+              about Prisoners' dilemma and Nash equilibrium is a good
+              introduction to this if you aren't already familiar.
+            </p>
+            <h2 dir="auto">Open source game theory</h2>
+            <p dir="auto">
+              Now consider the scenario where A and B are computer programs, and
+              they can read the other's source code. This is a classic example
+              in open source game theory, which covers the cases when agents can
+              look at their opponent's source code to figure out the best course
+              of action.
+            </p>
+            <p dir="auto">
+              Here are a few strategies such agents can take in the original
+              problem of prisoner's dilemma:
+            </p>
+            <ol dir="auto">
+              <li>
+                <p dir="auto">Always cooperate:</p>
+                <div class="highlight highlight-source-python">
+                  <pre><span class="pl-k">def</span> <span
                                 class="pl-en">cooperate_strategy</span>(<span
                                 class="pl-s1">opponent_source</span>: <span class="pl-s1">str</span>) <span
                                 class="pl-c1">-&gt;</span> <span class="pl-s1">str</span>:
     <span class="pl-k">return</span> <span class="pl-s">'cooperate'</span></pre>
-                        </div>
-                        <p dir="auto">This agent will always cooperate in all cases, which gives us a chance at
-                            achieving the optimal outcome.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">Always defect:</p>
-                        <div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span
+                </div>
+                <p dir="auto">
+                  This agent will always cooperate in all cases, which gives us
+                  a chance at achieving the optimal outcome.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">Always defect:</p>
+                <div class="highlight highlight-source-python">
+                  <pre><span class="pl-k">def</span> <span
                                 class="pl-en">defect_strategy</span>(<span class="pl-s1">opponent_source</span>: <span
                                 class="pl-s1">str</span>) <span class="pl-c1">-&gt;</span> <span
                                 class="pl-s1">str</span>:
     <span class="pl-k">return</span> <span class="pl-s">'defect'</span></pre>
-                        </div>
-                        <p dir="auto">This agent will always defect in all cases, which represents the optimal strategy
-                            when you cannot see your opponent's source code.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">Choose a strategy randomly:</p>
-                        <div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> <span
+                </div>
+                <p dir="auto">
+                  This agent will always defect in all cases, which represents
+                  the optimal strategy when you cannot see your opponent's
+                  source code.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">Choose a strategy randomly:</p>
+                <div class="highlight highlight-source-python">
+                  <pre><span class="pl-k">from</span> <span
                                 class="pl-s1">random</span> <span class="pl-k">import</span> <span
                                 class="pl-s1">random</span>
 <span class="pl-k">def</span> <span class="pl-en">random_strategy</span>(<span
@@ -115,15 +160,21 @@
         <span class="pl-k">return</span> <span class="pl-s">'cooperate'</span>
     <span class="pl-k">else</span>:
         <span class="pl-k">return</span> <span class="pl-s">'defect'</span></pre>
-                        </div>
-                        <p dir="auto">This agent will defect or cooperate with equal probability.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">Cooperate if you are sure that the opponent is going to cooperate, defect
-                            otherwise: This is a very interesting case. You try to prove that the opponent is going to
-                            cooperate, and cooperate only if you can prove that the opponent will cooperate. The
-                            pseudocode here could look like:</p>
-                        <div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span
+                </div>
+                <p dir="auto">
+                  This agent will defect or cooperate with equal probability.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">
+                  Cooperate if you are sure that the opponent is going to
+                  cooperate, defect otherwise: This is a very interesting case.
+                  You try to prove that the opponent is going to cooperate, and
+                  cooperate only if you can prove that the opponent will
+                  cooperate. The pseudocode here could look like:
+                </p>
+                <div class="highlight highlight-source-python">
+                  <pre><span class="pl-k">def</span> <span
                                 class="pl-en">proof_strategy</span>(<span class="pl-s1">opponent_source</span>: <span
                                 class="pl-s1">str</span>) <span class="pl-c1">-&gt;</span> <span
                                 class="pl-s1">str</span>:
@@ -133,142 +184,201 @@
         <span class="pl-k">return</span> <span class="pl-s">'cooperate'</span>
     <span class="pl-k">else</span>:
         <span class="pl-k">return</span> <span class="pl-s">'defect'</span></pre>
-                        </div>
-                        <p dir="auto">Let us look at some cases where an agent follows <code>proof_strategy</code>:</p>
-                        <ul dir="auto">
-                            <li>
-                                <p dir="auto"><code>proof_strategy(cooperate_strategy)</code> will return <code>cooperate</code>,
-                                    as we can be sure that the opponent is going to cooperate.</p>
-                            </li>
-                            <li>
-                                <p dir="auto"><code>proof_strategy(defect_strategy)</code> will return
-                                    <code>defect</code>, as we can be sure that the opponent is going to defect.</p>
-                            </li>
-                            <li>
-                                <p dir="auto"><code>proof_strategy(random_strategy)</code> will return
-                                    <code>defect</code>, as we can't be sure if the opponent is going to cooperate.</p>
-                            </li>
-                            <li>
-                                <p dir="auto"><code>proof_strategy(proof_strategy)</code> is a very interesting
-                                    scenario. You might be tempted to say that this program will never halt, as both
-                                    strategies will continue evaluating each other for infinitely many times (or, until
-                                    a stack overflow). However, our strategy does not necessarily need to evaluate the
-                                    opponent's strategy, just prove its cooperation. I encourage you to pause here and
-                                    give this some thought. The correct solution follows:</p>
-                                <p dir="auto">Suppose you could somehow look at the future. So, you decide to cooperate,
-                                    and look at how the future plays out. Since you cooperated, the opponent cooperated
-                                    as well. So, your decision to cooperate was correct. If you had decided to defect,
-                                    your opponent would have defected as well. So, your decision would have been
-                                    correct. Here, we can see that no matter what your decision is, the future pans out
-                                    favorably to you. Therefore, we can prove opponent's cooperation conditioned on us
-                                    cooperating, and thus we return <code>cooperate</code>.</p>
-                                <p dir="auto">A more formal proof for this can be constructed using <a
-                                        href="https://en.wikipedia.org/wiki/L%C3%B6b%27s_theorem" rel="nofollow">Löb's
-                                    theorem</a>, but completely understanding it isn't a requirement in the current
-                                    context.</p>
-                            </li>
-                        </ul>
-                    </li>
-                </ol>
-                <h2 dir="auto">Rules</h2>
-                <ol dir="auto">
-                    <li>
-                        <p dir="auto">The contest consists of 'rounds', where each round is a one on one match between
-                            your program and an opponent's program. Your program will run against all other
-                            participants, and your score will be the sum of your scores in each round (calculated as
-                            described in #8).</p>
-                    </li>
-                    <li>
-                        <p dir="auto">You need to submit python code. It should have a function called strategy with the
-                            following signature:</p>
-                        <div class="highlight highlight-source-python">
-                            <pre><span class="pl-k">def</span> <span class="pl-s1">strategy</span>(<span class="pl-s1">opponent_source</span>: <span
+                </div>
+                <p dir="auto">
+                  Let us look at some cases where an agent follows
+                  <code>proof_strategy</code>:
+                </p>
+                <ul dir="auto">
+                  <li>
+                    <p dir="auto">
+                      <code>proof_strategy(cooperate_strategy)</code> will
+                      return <code>cooperate</code>, as we can be sure that the
+                      opponent is going to cooperate.
+                    </p>
+                  </li>
+                  <li>
+                    <p dir="auto">
+                      <code>proof_strategy(defect_strategy)</code> will return
+                      <code>defect</code>, as we can be sure that the opponent
+                      is going to defect.
+                    </p>
+                  </li>
+                  <li>
+                    <p dir="auto">
+                      <code>proof_strategy(random_strategy)</code> will return
+                      <code>defect</code>, as we can't be sure if the opponent
+                      is going to cooperate.
+                    </p>
+                  </li>
+                  <li>
+                    <p dir="auto">
+                      <code>proof_strategy(proof_strategy)</code> is a very
+                      interesting scenario. You might be tempted to say that
+                      this program will never halt, as both strategies will
+                      continue evaluating each other for infinitely many times
+                      (or, until a stack overflow). However, our strategy does
+                      not necessarily need to evaluate the opponent's strategy,
+                      just prove its cooperation. I encourage you to pause here
+                      and give this some thought. The correct solution follows:
+                    </p>
+                    <p dir="auto">
+                      Suppose you could somehow look at the future. So, you
+                      decide to cooperate, and look at how the future plays out.
+                      Since you cooperated, the opponent cooperated as well. So,
+                      your decision to cooperate was correct. If you had decided
+                      to defect, your opponent would have defected as well. So,
+                      your decision would have been correct. Here, we can see
+                      that no matter what your decision is, the future pans out
+                      favorably to you. Therefore, we can prove opponent's
+                      cooperation conditioned on us cooperating, and thus we
+                      return <code>cooperate</code>.
+                    </p>
+                    <p dir="auto">
+                      A more formal proof for this can be constructed using
+                      <a
+                        href="https://en.wikipedia.org/wiki/L%C3%B6b%27s_theorem"
+                        rel="nofollow"
+                        >Löb's theorem</a
+                      >, but completely understanding it isn't a requirement in
+                      the current context.
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <h2 dir="auto">Rules</h2>
+            <ol dir="auto">
+              <li>
+                <p dir="auto">
+                  The contest consists of 'rounds', where each round is a one on
+                  one match between your program and an opponent's program. Your
+                  program will run against all other participants, and your
+                  score will be the sum of your scores in each round (calculated
+                  as described in #8).
+                </p>
+              </li>
+              <li>
+                <p dir="auto">
+                  You need to submit python code. It should have a function
+                  called strategy with the following signature:
+                </p>
+                <div class="highlight highlight-source-python">
+                  <pre><span class="pl-k">def</span> <span class="pl-s1">strategy</span>(<span class="pl-s1">opponent_source</span>: <span
                                     class="pl-s1">str</span>) <span class="pl-c1">-&gt;</span> <span
                                     class="pl-s1">str</span></pre>
-                        </div>
-                    </li>
-                    <li>
-                        <p dir="auto">You can import and use scikit, pytorch, and tensorflow (CPU compute only). For a
-                            complete list of installed packages, see <a
-                                    href="https://gist.github.com/pranavgade20/f6d7895d7899becf3515e733152c5bf3">this
-                                page</a>. If you'd like some other library to be included in the evaluation environment,
-                            send us an email with your reasons, and we'll consider your request.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">Your program is not allowed to write anything to the disk, or connect to the
-                            internet.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">Your program must exit in 6 seconds. If it does not exit, it will be terminated
-                            forcefully, and you will forfeit that round.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">The evaluation platform will have 6 cores/12 threads
-                            or better, and 12GiB memory or better. If your program needs more memory/compute, you can
-                            contact us and we'll consider your request.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">You are allowed to find and exploit any loopholes in the problem itself, but you
-                            are not allowed to use language-level exploits in python, or other exploits that go against
-                            the spirit of the contest. If something is fishy, you might be disqualified at the judge's
-                            discretion.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">Scoring:</p>
-                        <ul dir="auto">
-                            <li>+2 if you and opponent cooperate</li>
-                            <li>+3 if you defect while opponent cooperates</li>
-                            <li>+1 if you and opponent defect</li>
-                            <li>0 if you cooperate but opponent defects</li>
-                            <li>-4 if your program times out, and +4 for your opponent. -4 for both if both time out
-                            </li>
-                            <li>-4 if your program crashes, or doesn't return a valid answer (by printing it to out),
-                                and +4 for your opponent. -4 for both if both crash
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <p dir="auto">Eligibility: Although everyone is welcome to participate, we cannot send any
-                            prizes (except digital certificates) outside India.</p>
-                    </li>
-                    <li>
-                        <p dir="auto">Prizes:</p>
-                    </li>
-                </ol>
+                </div>
+              </li>
+              <li>
+                <p dir="auto">
+                  You can import and use scikit, pytorch, and tensorflow (CPU
+                  compute only). For a complete list of installed packages, see
+                  <a
+                    href="https://gist.github.com/pranavgade20/f6d7895d7899becf3515e733152c5bf3"
+                    >this page</a
+                  >. If you'd like some other library to be included in the
+                  evaluation environment, send us an email with your reasons,
+                  and we'll consider your request.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">
+                  Your program is not allowed to write anything to the disk, or
+                  connect to the internet.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">
+                  Your program must exit in 6 seconds. If it does not exit, it
+                  will be terminated forcefully, and you will forfeit that
+                  round.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">
+                  The evaluation platform will have 6 cores/12 threads or
+                  better, and 12GiB memory or better. If your program needs more
+                  memory/compute, you can contact us and we'll consider your
+                  request.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">
+                  You are allowed to find and exploit any loopholes in the
+                  problem itself, but you are not allowed to use language-level
+                  exploits in python, or other exploits that go against the
+                  spirit of the contest. If something is fishy, you might be
+                  disqualified at the judge's discretion.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">Scoring:</p>
                 <ul dir="auto">
-                    <li>1st place: ₹50,000</li>
-                    <li>2nd place: ₹25,000</li>
-                    <li>3rd place: ₹12,500</li>
-                    <li>4th place: ₹6,250</li>
-                    <li>5th place: ₹3,125</li>
-                    <li>6th place: ₹1,562.5</li>
-                    <li>7th place: ₹781.25</li>
-                    <li>8th place: ₹390.63</li>
-                    <li>9th place: ₹390.62</li>
+                  <li>+2 if you and opponent cooperate</li>
+                  <li>+3 if you defect while opponent cooperates</li>
+                  <li>+1 if you and opponent defect</li>
+                  <li>0 if you cooperate but opponent defects</li>
+                  <li>
+                    -4 if your program times out, and +4 for your opponent. -4
+                    for both if both time out
+                  </li>
+                  <li>
+                    -4 if your program crashes, or doesn't return a valid answer
+                    (by printing it to out), and +4 for your opponent. -4 for
+                    both if both crash
+                  </li>
                 </ul>
-                <ol dir="auto" start="11">
-                    <li>The top 10 winners will be invited to interview to get an all-expenses paid trip to San
-                        Francisco, California. Depending on the quality of submissions, at the judge's discretion, more
-                        than 10 winners might be invited to the interviews. So, we encourage you to submit code with
-                        comments. Alternatively, you can send a write-up explaining your thought process and solution to
-                        <a href="mailto:pranavgade20@gmail.com">pranavgade20@gmail.com</a> after the contest ends.
-                    </li>
-                </ol>
-            </article>
+              </li>
+              <li>
+                <p dir="auto">
+                  Eligibility: Although everyone is welcome to participate, we
+                  cannot send any prizes (except digital certificates) outside
+                  India.
+                </p>
+              </li>
+              <li>
+                <p dir="auto">Prizes:</p>
+              </li>
+            </ol>
+            <ul dir="auto">
+              <li>1st place: ₹50,000</li>
+              <li>2nd place: ₹25,000</li>
+              <li>3rd place: ₹12,500</li>
+              <li>4th place: ₹6,250</li>
+              <li>5th place: ₹3,125</li>
+              <li>6th place: ₹1,562.5</li>
+              <li>7th place: ₹781.25</li>
+              <li>8th place: ₹390.63</li>
+              <li>9th place: ₹390.62</li>
+            </ul>
+            <ol dir="auto" start="11">
+              <li>
+                The top 10 winners will be invited to interview to get an
+                all-expenses paid trip to San Francisco, California. Depending
+                on the quality of submissions, at the judge's discretion, more
+                than 10 winners might be invited to the interviews. So, we
+                encourage you to submit code with comments. Alternatively, you
+                can send a write-up explaining your thought process and solution
+                to
+                <a href="mailto:pranavgade20@gmail.com"
+                  >pranavgade20@gmail.com</a
+                >
+                after the contest ends.
+              </li>
+            </ol>
+          </article>
         </div>
-    </div>
-    <div class="footer">
+      </div>
+      <div class="footer">
         <h2 class="presented">Presented by</h2>
         <div class="images">
-            <img src="./images/atlas.png" alt="Atlas"/>
-            <img src="./images/equinox.png" alt="Equinonx"/>
+          <img src="./images/atlas.png" alt="Atlas" />
+          <img src="./images/equinox.png" alt="Equinonx" />
         </div>
+      </div>
     </div>
-</div>
-
-
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r78/three.min.js"></script>
-<script src="./script.js"></script>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r78/three.min.js"></script>
+  <script src="./script.js"></script>
 </html>
